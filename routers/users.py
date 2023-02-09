@@ -7,7 +7,6 @@ import os
 
 
 router = APIRouter()
-
 auth_handler = AuthHandler()
 
     
