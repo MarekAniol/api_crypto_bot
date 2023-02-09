@@ -14,3 +14,4 @@ class UserInDB(User):
 class AuthDetails(BaseModel):
     username: str
     password: str
+    
