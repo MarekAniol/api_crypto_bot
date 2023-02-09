@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, HTTPException
 from auth_handler import AuthHandler
-from schemas import AuthDetails
+from models.user_models import AuthDetails
 
 
 def env_configure():
@@ -13,9 +13,9 @@ app = FastAPI()
 
 mock_users_db = {
     "tomasharoson": {
-        "username": "tomasharison",
-        "full_name": "Tomas Harison",
-        "email": "tomasharison@example.com",
+        "username": "tomasharoson",
+        "full_name": "Tomas Haroson",
+        "email": "tomasharoson@example.com",
         "hashed_password": "fakehashedsecret",
         "disabled": False,
     },
