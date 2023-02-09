@@ -1,7 +1,7 @@
 from fastapi import HTTPException, Depends, status
 from fastapi.security import HTTPBearer, OAuth2PasswordBearer
 from passlib.context import CryptContext
-from app import mock_users_db as users_db
+import fake_db
 import models.user_models as model
 
 
@@ -13,7 +13,7 @@ class AuthHandler():
     
     
     def fake_decode_token(self, token):
-        user = self.get_user(users_db, token)
+        user = self.get_user(fake_db.mock_users_db, token)
         return user
     
     async def get_current_user(self, token: str = Depends(oauth2_scheme)):

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 import models.user_models as user_model
 from auth_handler import AuthHandler
 from fastapi.security import OAuth2PasswordRequestForm
-from app import mock_users_db as users_db
+import fake_db
 
 
 router = APIRouter()
@@ -17,7 +17,7 @@ async def read_users_me(current_user: user_model.User = Depends(auth_handler.get
 
 @router.post("/token")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
-    user_dict = users_db.get(form_data.username)
+    user_dict = fake_db.mock_users_db.get(form_data.username)
     
     if not user_dict:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
