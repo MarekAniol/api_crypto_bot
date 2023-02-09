@@ -1,6 +1,5 @@
-import jwt
-from fastapi import Security, HTTPException, Depends, FastAPI, status
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer, OAuth2PasswordBearer
+from fastapi import HTTPException, Depends, status
+from fastapi.security import HTTPBearer, OAuth2PasswordBearer
 from passlib.context import CryptContext
 from app import mock_users_db as users_db
 import models.user_models as model

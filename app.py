@@ -1,8 +1,5 @@
 from dotenv import load_dotenv
-from fastapi import FastAPI, Depends, HTTPException
-from auth_handler import AuthHandler
-from models.user_models import AuthDetails
-
+from fastapi import FastAPI
 
 def env_configure():
     load_dotenv()
